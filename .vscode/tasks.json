@@ -3,9 +3,13 @@
     "tasks": [
         // VENV: Build
         {
-            "label": "VENV: Build",
+            "label": "VENV: build venv",
             "type": "shell",
-            "command": "./venv.sh build",
+            "command": "./venv.sh",
+            "problemMatcher": [],
+            "args": [
+                "build"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": false
@@ -18,10 +22,17 @@
 
         // VENV: Reload
         {
-            "label": "VENV: Reload",
+            "label": "VENV: reload venv",
             "type": "shell",
-            "command": "./venv.sh reload",
+            "command": "./venv.sh",
             "problemMatcher": [],
+            "args": [
+                "reload"
+            ],
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
             "presentation": {
                 "reveal": "silent",
                 "panel": "dedicated"
@@ -30,10 +41,13 @@
 
         // VENV: Rebuild
         {
-            "label": "VENV: Rebuild",
+            "label": "VENV: rebuild venv",
             "type": "shell",
-            "command": "./venv.sh rebuild",
+            "command": "./venv.sh",
             "problemMatcher": [],
+            "args": [
+                "rebuild"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -46,14 +60,41 @@
 
         // VENV: Remove
         {
-            "label": "VENV: Remove",
+            "label": "VENV: remove venv",
             "type": "shell",
-            "command": "./venv.sh remove",
+            "command": "./venv.sh",
             "problemMatcher": [],
+            "args": [
+                "remove"
+            ],
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
             "presentation": {
                 "reveal": "silent",
                 "panel": "dedicated"
             }
-        }
+        },
+
+        // VENV: Run
+        {
+            "label": "VENV: run current file",
+            "type": "shell",
+            "command": "./venv.sh",
+            "problemMatcher": [],
+            "args": [
+                "run",
+                "${file}"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        },
     ]
 }

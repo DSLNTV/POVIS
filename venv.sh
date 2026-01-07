@@ -117,9 +117,15 @@ reload_venv() {
 }
 
 rebuild_venv() {
+    echo "Rebuilding VENV..."
+
     remove_venv
+
     echo
+
     build_venv
+
+    echo "Done."
 }
 
 remove_venv() {
@@ -130,7 +136,16 @@ remove_venv() {
     rm -rf $VENV_NAME
 
     echo "Done."
+}
 
+run_venv() {
+    echo "Running with VENV..."
+
+    venv_activate
+
+    $PYTHON_BIN "$@"
+
+    echo "Done."
 }
 
 
@@ -149,7 +164,11 @@ case "$1" in
     rebuild)
         rebuild_venv
         ;;
+    run)
+        shift
+        run_venv "$@"
+        ;;
     *)
-        echo "Usage: venv.sh [build|reload|rebuild|remove]"
+        echo "Usage: venv.sh [build|reload|rebuild|remove|run]"
         ;;
 esac
