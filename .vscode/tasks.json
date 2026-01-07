@@ -1,0 +1,59 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        // VENV: Build
+        {
+            "label": "VENV: Build",
+            "type": "shell",
+            "command": "./venv.sh build",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "silent",
+                "panel": "dedicated"
+            }
+        },
+
+        // VENV: Reload
+        {
+            "label": "VENV: Reload",
+            "type": "shell",
+            "command": "./venv.sh reload",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent",
+                "panel": "dedicated"
+            }
+        },
+
+        // VENV: Rebuild
+        {
+            "label": "VENV: Rebuild",
+            "type": "shell",
+            "command": "./venv.sh rebuild",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "silent",
+                "panel": "dedicated"
+            }
+        },
+
+        // VENV: Remove
+        {
+            "label": "VENV: Remove",
+            "type": "shell",
+            "command": "./venv.sh remove",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent",
+                "panel": "dedicated"
+            }
+        }
+    ]
+}
