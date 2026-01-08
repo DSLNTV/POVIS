@@ -85,7 +85,7 @@
             "problemMatcher": [],
             "args": [
                 "run",
-                "${file}"
+                "'${file}'"
             ],
             "group": {
                 "kind": "test",

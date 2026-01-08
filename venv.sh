@@ -8,7 +8,14 @@ cd "$WORKSPACE" || exit 1
 
 VENV_NAME="venv"
 
-PYTHON_BIN="python"
+if command -v python3 >/dev/null 2>&1; then
+    PYTHON_BIN="python3"
+elif command -v python >/dev/null 2>&1; then
+    PYTHON_BIN="python"
+else
+    echo "ERROR: Python could not be found on the system!"
+    exit 1
+fi
 PYTHON_VERSION=$($PYTHON_BIN -c "import sys; print(f'python{sys.version_info.major}.{sys.version_info.minor}')")
 
 

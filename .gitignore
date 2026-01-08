@@ -1,2 +1,8 @@
 # Environment
 venv/
+
+# Configurations
+Config/**
+
+# Python
+__pycache__/
